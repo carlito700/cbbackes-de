@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekte — Carl Backes</title>
+  <meta name="description" content="Projekte von Carl Backes: kunsthistorische Texte, Galerie- und Kunstmarktprojekte, digitale Formate.">
+  <link rel="canonical" href="https://cbbackes.de/projekte.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ===== HEADER / NAVIGATION (identisch auf allen Seiten) ===== -->
+<header class="site-header">
+  <div class="container container--wide">
+    <a class="site-logo" href="index.html">Carl Backes</a>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="projekte.html" aria-current="page">Projekte</a></li>
+        <li><a href="cv.html">Lebenslauf</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container container--wide">
+    <h1 class="section-title">Projekte</h1>
+    <p class="muted">Aktuelle und geplante Arbeiten. Diese Übersicht wird laufend ergänzt.</p>
+
+    <!-- Die Projektkarten werden automatisch aus data/projects.js erzeugt.
+         Neues Projekt hinzufügen = neuen Eintrag in data/projects.js anlegen.
+         Diese HTML-Datei muss dafür NICHT geändert werden. -->
+    <ul class="project-grid" id="projekt-liste"></ul>
+
+    <noscript>
+      <p>Die Projektliste benötigt JavaScript. Alternativ:
+      <a href="kontakt.html">Kontakt aufnehmen</a>.</p>
+    </noscript>
+  </div>
+</main>
+
+<!-- ===== FOOTER (identisch auf allen Seiten) ===== -->
+<footer class="site-footer">
+  <div class="container container--wide">
+    <span>© 2026 Carl Backes</span>
+    <span><a href="impressum.html">Impressum</a></span>
+  </div>
+</footer>
+
+<!-- Projektdaten + Renderer (Reihenfolge wichtig: erst Daten, dann Renderer) -->
+<script src="data/projects.js"></script>
+<script src="js/render-projects.js"></script>
+
+</body>
+</html>
