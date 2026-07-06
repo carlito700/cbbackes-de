@@ -1,0 +1,61 @@
+/* ============================================================
+   theme.css — ZENTRALE DESIGN-WERTE
+   Alle Farben, Schriften, Abstände und Größen der Website
+   werden HIER definiert. Design-Änderungen (Akzentfarbe,
+   Schriftgröße, Spacing, Dark Mode) nur in dieser Datei machen.
+   ============================================================ */
+
+:root {
+  /* --- Farben --- */
+  --color-bg: #ffffff;            /* Seitenhintergrund */
+  --color-bg-soft: #faf9f7;       /* Off-White für abgesetzte Flächen */
+  --color-text: #1a1a1a;          /* Haupttext */
+  --color-text-muted: #6e6a64;    /* Nebentext, Meta-Angaben */
+  --color-line: #e7e4df;          /* Trennlinien, Rahmen */
+  --color-accent: #7a1f2b;        /* Bordeaux — sparsam: Links, Hover */
+  --color-accent-hover: #5c141f;  /* Bordeaux dunkler (Hover) */
+  --color-gold: #a8873a;          /* Gold — sehr sparsam: feine Linien, Details */
+
+  /* --- Schrift --- */
+  --font-serif: Georgia, "Times New Roman", serif;  /* Überschriften */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; /* Fließtext */
+
+  /* --- Schriftgrößen --- */
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2.125rem;
+  --text-hero: clamp(2.25rem, 6vw, 3.5rem);
+
+  /* --- Abstände --- */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+
+  /* --- Layout --- */
+  --content-width: 44rem;   /* max. Breite für Text */
+  --wide-width: 62rem;      /* max. Breite für Karten-Raster */
+  --line-height: 1.65;
+}
+
+/* ------------------------------------------------------------
+   DARK MODE (vorbereitet, aktuell deaktiviert)
+   Zum Aktivieren: Block einkommentieren und im <html>-Tag
+   data-theme="dark" setzen — oder per Media Query automatisch:
+   @media (prefers-color-scheme: dark) { :root { ... } }
+   ------------------------------------------------------------ */
+/*
+:root[data-theme="dark"] {
+  --color-bg: #141414;
+  --color-bg-soft: #1c1b1a;
+  --color-text: #ececea;
+  --color-text-muted: #a09c96;
+  --color-line: #2e2c2a;
+  --color-accent: #c05a68;
+  --color-accent-hover: #d47b87;
+  --color-gold: #c3a35a;
+}
+*/
