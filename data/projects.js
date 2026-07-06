@@ -1,7 +1,7 @@
 /* ============================================================
    projects.js — PROJEKTDATEN
-   Neues Projekt hinzufügen: einfach einen weiteren Eintrag
-   { ... } an die Liste anhängen. Sonst nichts nötig —
+   Neues Projekt hinzufügen: einen Eintrag { ... } in die Liste
+   PROJECTS einfügen (Beispiel unten einkommentieren und anpassen).
    projekte.html erzeugt die Karten automatisch.
 
    Felder:
@@ -9,33 +9,18 @@
    kurz      (Pflicht)  1–2 Sätze Beschreibung
    jahr      (Pflicht)  z. B. "2026" oder "seit 2025"
    status    (Pflicht)  z. B. "In Arbeit", "Geplant", "Abgeschlossen"
-   kategorie (Pflicht)  z. B. "Kunsthistorische Texte"
-   link      (Optional) URL — weglassen oder null, wenn keiner existiert
+   kategorie (Pflicht)  z. B. "Texte", "Kunstmarkt", "Digital"
+   link      (Optional) URL — oder null, wenn keiner existiert
    ============================================================ */
 
 const PROJECTS = [
-  {
-    titel: "Kunsthistorische Texte",
-    kurz: "Essays und kürzere Texte zu Kunstgeschichte und Kunstmarkt. Erste Beiträge folgen.",
-    jahr: "2026",
-    status: "Geplant",
-    kategorie: "Texte",
-    link: null
-  },
-  {
-    titel: "Galerie- und Kunstmarktprojekte",
-    kurz: "Projekte aus der Galeriearbeit und Beobachtungen zum Kunstmarkt.",
-    jahr: "seit 2025",
-    status: "In Arbeit",
-    kategorie: "Kunstmarkt",
-    link: null
-  },
-  {
-    titel: "Digitale Formate",
-    kurz: "Instagram- und Videoformate, die Kunstgeschichte zugänglich erzählen.",
-    jahr: "2026",
-    status: "Geplant",
-    kategorie: "Digital",
-    link: null
-  }
+  // Beispiel — zum Aktivieren einkommentieren und anpassen:
+  // {
+  //   titel: "Projekttitel",
+  //   kurz: "Kurzbeschreibung in ein bis zwei Sätzen.",
+  //   jahr: "2026",
+  //   status: "Geplant",
+  //   kategorie: "Texte",
+  //   link: null
+  // }
 ];
