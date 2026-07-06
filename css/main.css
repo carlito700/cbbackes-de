@@ -1,0 +1,225 @@
+/* ============================================================
+   main.css — LAYOUT & KOMPONENTEN
+   Nutzt ausschließlich Variablen aus theme.css.
+   Für Farb-/Schrift-/Abstandsänderungen: theme.css bearbeiten.
+   ============================================================ */
+
+/* --- Basis --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 var(--space-sm);
+}
+
+h1 { font-size: var(--text-2xl); }
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
+
+p { margin: 0 0 var(--space-sm); }
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+a:hover, a:focus-visible { color: var(--color-accent-hover); text-decoration: underline; }
+
+/* Sichtbarer Tastatur-Fokus (Barrierefreiheit) */
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+
+/* --- Seitencontainer --- */
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+.container--wide { max-width: var(--wide-width); }
+
+/* --- Header & Navigation (auf allen Seiten identisch) --- */
+.site-header {
+  border-bottom: 1px solid var(--color-line);
+  padding: var(--space-sm) 0;
+}
+.site-header .container--wide {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-md);
+}
+.site-logo {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+.site-logo:hover { color: var(--color-accent); text-decoration: none; }
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-md);
+}
+.site-nav a {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.site-nav a:hover { color: var(--color-accent); text-decoration: none; }
+/* aria-current="page" markiert die aktive Seite im HTML */
+.site-nav a[aria-current="page"] {
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-gold);
+}
+
+/* --- Hauptbereich --- */
+main { padding: var(--space-xl) 0; min-height: 55vh; }
+
+/* --- Hero (Startseite) --- */
+.hero { padding: var(--space-xl) 0; text-align: center; }
+.hero h1 { font-size: var(--text-hero); margin-bottom: var(--space-xs); }
+.hero .claim {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  margin: 0 auto var(--space-md);
+  max-width: 34rem;
+}
+/* feine goldene Zierlinie unter dem Namen */
+.hero::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 1px;
+  background: var(--color-gold);
+  margin: var(--space-lg) auto 0;
+}
+
+/* --- Abschnittsüberschrift mit feiner Linie --- */
+.section-title {
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-line);
+  margin-bottom: var(--space-md);
+}
+
+/* --- Projektkarten --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.project-card {
+  border: 1px solid var(--color-line);
+  background: var(--color-bg-soft);
+  padding: var(--space-md);
+}
+.project-card h3 { margin-bottom: var(--space-xs); }
+.project-card .meta {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+.project-card .status {
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+}
+.project-card p:last-of-type { margin-bottom: 0; }
+
+/* --- CV --- */
+.cv-section { margin-bottom: var(--space-lg); }
+.cv-entry { margin-bottom: var(--space-md); }
+.cv-entry .zeitraum {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  display: block;
+}
+.cv-entry h3 { margin-bottom: 0.2rem; }
+.cv-entry p { margin-bottom: 0; }
+
+/* --- Kontakt --- */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0;
+}
+.contact-list li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+.contact-list .label {
+  display: inline-block;
+  min-width: 7rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* --- Buttons (z. B. PDF-Download) --- */
+.button {
+  display: inline-block;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  padding: 0.6rem 1.4rem;
+  font-size: var(--text-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.button:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* --- Footer (auf allen Seiten identisch) --- */
+.site-footer {
+  border-top: 1px solid var(--color-line);
+  padding: var(--space-md) 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.site-footer .container--wide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-md);
+}
+.site-footer a { color: var(--color-text-muted); }
+.site-footer a:hover { color: var(--color-accent); }
+
+/* --- Hilfsklassen --- */
+.muted { color: var(--color-text-muted); }
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* --- Desktop --- */
+@media (min-width: 700px) {
+  .project-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: calc(var(--space-xl) * 1.4) 0; }
+}
